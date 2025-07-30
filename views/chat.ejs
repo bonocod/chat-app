@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Socket.IO Chat</title>
+  <link rel="stylesheet" href="/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <header>
+    <h1>💬 Chat Application</h1>
+    <button id="logout-btn">Logout</button>
+  </header>
+
+  <!-- Username Join Form -->
+  <div id="username-container">
+    <form id="username-form">
+      <input id="username-input" type="text" placeholder="Enter your name" required />
+      <button type="submit">Join Chat</button>
+    </form>
+  </div>
+
+  <!-- Chat Interface -->
+  <main id="chat-container" style="display: none;">
+    <aside id="user-list-container">
+      <h3>Online Users</h3>
+      <ul id="user-list"></ul>
+    </aside>
+
+    <section id="chat-area">
+      <!-- Tabs -->
+      <div id="chat-tabs">
+        <button id="public-tab" class="active-tab">Public</button>
+        <button id="private-tab">Private</button>
+      </div>
+
+      <!-- Public / Private Chat Boxes -->
+      <ul id="chat-box-public" class="chat-box"></ul>
+      <ul id="chat-box-private" class="chat-box" style="display: none;"></ul>
+
+      <!-- Message Input -->
+      <form id="chat-form">
+        <input id="message-input" type="text" placeholder="Type a message..." autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/chat.js"></script>
+</body>
+</html>
